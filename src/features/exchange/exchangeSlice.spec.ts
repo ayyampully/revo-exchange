@@ -4,7 +4,7 @@ import { ExchangeState, Fields, Types } from "./types";
 describe("Exchange reducer", () => {
   const initialState: ExchangeState = {
     exchangeType: Types.SELL,
-    userInput: Fields.FROM,
+    userField: Fields.FROM,
     fromCurrency: "USD",
     toCurrency: "EUR",
     fromValue: 0,
