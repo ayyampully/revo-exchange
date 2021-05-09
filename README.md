@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Revolut Exchange
+
+The app loads with two accounts initially (USD, EUR) both 100 balance. Currently using [https://openexchangerates.org/](https://openexchangerates.org/) to get currency info and exchange rates. The free version only supports base as USD, so when choosing others the rate is derived from USD.
+
+Using only AED, CHF, EUR, GBP, INR, JPY, USD for simplicity. Because of the API monthly limit, i also added a mock function.
+
+### Mocks
+
+Mock can be enabled by adding `.env.local` file with `REACT_APP_ENABLE_MOCK=true` or manually change line 7 on `src\features\exchange\exchangeAPI.ts`
 
 ## Available Scripts
 
