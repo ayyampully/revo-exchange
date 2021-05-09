@@ -12,7 +12,7 @@ import {
 const BASE = "USD";
 const initialState: ExchangeState = {
   exchangeType: Types.SELL,
-  userInput: Fields.FROM,
+  userField: Fields.FROM,
   fromCurrency: BASE,
   toCurrency: "EUR",
   fromValue: 0,
@@ -36,7 +36,7 @@ export const exchangeSlice = createSlice({
     setCurrency: (state, action: PayloadAction<SetCurrencyPayload>) => {
       const { fieldType, currency } = action.payload;
 
-      if (state.userInput === Fields.FROM) {
+      if (state.userField === Fields.FROM) {
         if (fieldType === Fields.FROM) {
           state.fromCurrency = currency;
           state.toValue = state.fromValue * state.selectedRate;
@@ -67,7 +67,7 @@ export const exchangeSlice = createSlice({
       }
     },
     setUserField: (state, action: PayloadAction<Fields>) => {
-      state.userInput = action.payload;
+      state.userField = action.payload;
     },
     setExchangeType: (state, action: PayloadAction<Types>) => {
       state.exchangeType = action.payload;
@@ -105,7 +105,7 @@ export const exchangeSlice = createSlice({
         }
 
         if (state.toValue) {
-          if (state.userInput === Fields.FROM) {
+          if (state.userField === Fields.FROM) {
             state.toValue = state.fromValue * state.selectedRate;
           } else {
             state.fromValue = state.toValue / state.selectedRate;
@@ -134,6 +134,6 @@ export const selectFromValue = (state: RootState) => state.exchange.fromValue;
 export const selectToValue = (state: RootState) => state.exchange.toValue;
 export const selectExchangeType = (state: RootState) =>
   state.exchange.exchangeType;
-export const selectUserField = (state: RootState) => state.exchange.userInput;
+export const selectUserField = (state: RootState) => state.exchange.userField;
 export const selectErrorState = (state: RootState) => state.exchange.errorState;
 export default exchangeSlice.reducer;

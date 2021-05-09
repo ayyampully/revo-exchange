@@ -18,13 +18,40 @@ export interface SetCurrencyValuePayload {
   fieldType: Fields;
 }
 export interface ExchangeState {
+  /**
+   * rate - exchange rate
+   */
   exchangeType: Types;
-  userInput: Fields;
+  /**
+   * userField - user entered field - tracking it update when rate updates
+   */
+  userField: Fields;
+  /**
+   * fromCurrency - three letter currency code
+   */
   fromCurrency: string;
+  /**
+   * toCurrency - three letter currency code
+   */
   toCurrency: string;
+  /**
+   * fromValue - parsed number from from input
+   */
   fromValue: number;
+  /**
+   * toValue - parsed number from to input
+   */
   toValue: number;
+  /**
+   * selectedRate - exchange rate from RateData based on user selection
+   */
   selectedRate: number;
+  /**
+   * rate - exchange rate from https://openexchangerates.org/
+   */
   rate: RateData;
+  /**
+   * errorState - string containing api error message
+   */
   errorState: string;
 }

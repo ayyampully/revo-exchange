@@ -58,6 +58,7 @@ function Exchange() {
   const to = balances[toCurrency];
 
   useEffect(() => {
+    // if currencies loaded from accounts page no need to reload
     if (!Object.keys(currencies).length) {
       dispatch(getCurrencies());
     }
@@ -90,7 +91,6 @@ function Exchange() {
     }
     if (exchangeType === Types.BUY) {
       setFromErrorState(false);
-
       if (userField === Fields.FROM) {
         setToDisplayValue(formatDisplayValue(toValue));
         if (toValue > to?.balance) {
@@ -111,6 +111,11 @@ function Exchange() {
     if (!value) return "";
     return `${value}`;
   };
+
+  /**
+   * handling from and to changes here to allow input only display values
+   * active user input is handled here other value is updated in useEffect
+   */
   const handleFromChange = async (value: string) => {
     const inputValue = Math.abs(Number(value));
 
@@ -152,6 +157,9 @@ function Exchange() {
     await dispatch(clearValues());
   };
 
+  /**
+   * Updating exchange type will swicth operation type
+   */
   const handleSwitchClick = async () => {
     let type = Types.SELL;
     if (exchangeType === Types.SELL) {
@@ -160,6 +168,9 @@ function Exchange() {
     await dispatch(setExchangeType(type));
   };
 
+  /**
+   * Adding from and to currency here to remove it from modal
+   */
   const ignoreCurrency = [fromCurrency, toCurrency];
 
   const disableExchangeButton =
