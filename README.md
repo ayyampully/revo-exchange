@@ -1,4 +1,4 @@
-## Revolut Exchange
+## Revolut Exchange [![ayyampully](https://circleci.com/gh/ayyampully/revo-exchange.svg?style=svg)](https://circleci.com/gh/circleci/revo-exchange)
 
 The app loads with two accounts initially (USD, EUR) both 100 balance. Currently using [https://openexchangerates.org/](https://openexchangerates.org/) to get currency info and exchange rates. The free version only supports base as USD, so when choosing others the rate is derived from USD.
 
