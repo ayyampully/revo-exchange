@@ -1,0 +1,35 @@
+.item {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.leftCol {
+  display: flex;
+  flex-direction: column;
+}
+select {
+  display: none;
+}
+.balance {
+  font-size: 0.8rem;
+  margin-top: 8px;
+  color: #989898;
+}
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.rightCol input {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  border: none;
+  text-align: right;
+  outline: none;
+}
+.errorLabel {
+  color: red;
+  font-size: 0.8rem;
+}

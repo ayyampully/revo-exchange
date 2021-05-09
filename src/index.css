@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f7f7f7;
+}
+h1,
+h2 {
+  font-family: "Varela Round", sans-serif;
+}
+
+.fontVarela {
+  font-family: "Varela Round", sans-serif;
+}
+.button {
+  font-family: "Roboto", sans-serif;
+  background-color: #0666eb;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 7px;
+  transition: all ease-in 200ms;
+}
+.button:hover {
+  background-color: #035dda;
+}
+.content {
+  display: flex;
+  justify-content: center;
+}

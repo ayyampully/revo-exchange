@@ -1,0 +1,48 @@
+.overview {
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  min-width: 460px;
+  display: flex;
+  flex-direction: column;
+}
+.actions {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: flex-end;
+}
+.button {
+  composes: button from "../../index.css";
+  display: flex;
+  align-items: center;
+}
+.buttonIcon {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
+.button svg {
+  transition: all ease-in 100ms;
+}
+.button:hover svg {
+  transform: translateX(20%);
+}
+
+.accountItem {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+.accountRow h4 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.accountRowText {
+  margin: 0;
+}

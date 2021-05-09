@@ -1,0 +1,81 @@
+.options {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0.8rem;
+}
+.header h2 {
+  font-size: 1.4rem;
+}
+.close {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+.options ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+.options ul li {
+  padding: 0.8rem;
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+  transition: all ease-in 200ms;
+}
+.options ul li:hover {
+  background-color: #0666eb;
+  color: #fff;
+}
+.options p {
+  font-weight: 300;
+  margin: 0;
+}
+.options p.acronym {
+  font-weight: 600;
+}
+@media screen and (min-width: 640px) {
+  .modalWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .options {
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    z-index: 1;
+    min-width: 550px;
+    border-radius: 6px;
+    max-height: calc(100vh - 20%);
+  }
+
+  .options ul li:last-child {
+    border-radius: 0 0 6px 6px;
+  }
+  .overlay {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}

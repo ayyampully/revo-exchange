@@ -1,0 +1,82 @@
+.header {
+  padding: 1rem 2rem;
+  background: #191c1f;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+}
+.button {
+  composes: button from "../../index.css";
+}
+.logo {
+  text-decoration: none;
+  color: #fff;
+}
+
+.accountButton {
+  composes: fontVarela from "../../index.css";
+  font-weight: 600;
+  border-radius: 100%;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  display: flex;
+  border: none;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+.accountButtonContents {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  color: #505050;
+  position: relative;
+  animation: slide 3s ease-in-out infinite;
+  animation-delay: 2s;
+}
+.accountButtonLabel {
+  font-size: 1.2rem;
+  display: flex;
+  border-radius: 100%;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+}
+.accountButtonIcon {
+  display: flex;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  padding: 9px;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  10% {
+    left: 0;
+  }
+  40% {
+    left: -100%;
+  }
+  60% {
+    left: -100%;
+  }
+  90% {
+    left: 0;
+  }
+  100% {
+    left: 0;
+  }
+}

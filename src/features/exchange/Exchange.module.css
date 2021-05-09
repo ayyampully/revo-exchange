@@ -1,0 +1,87 @@
+.exchange {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  min-width: 460px;
+  flex-direction: column;
+}
+h2 {
+  margin: 0;
+}
+.marketOrder {
+  composes: fontVarela from "../../index.css";
+  font-size: 0.9rem;
+  color: #0666eb;
+}
+
+.switchButtonWrapper {
+  display: flex;
+  align-items: center;
+  height: 15px;
+  justify-content: center;
+  overflow: visible;
+}
+.switchButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  border: 4px solid #f7f7f7;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #0666eb;
+}
+
+.switchButtonDown {
+  composes: switchButton;
+}
+.switchButtonDown svg {
+  transition: all ease-in 200ms;
+}
+.switchButtonDown:hover svg {
+  transform: translateY(15%);
+}
+
+.switchButtonUp {
+  composes: switchButton;
+}
+.switchButtonUp svg {
+  transition: all ease-in 200ms;
+}
+.switchButtonUp:hover svg {
+  transform: translateY(-15%);
+}
+
+.actions {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+}
+.button {
+  composes: button from "../../index.css";
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+.button:disabled {
+  background: #75a9f0;
+  color: #ededed;
+  cursor: default;
+}
+.button span {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
+.button svg {
+  transition: all ease-in 100ms;
+}
+.button:hover svg {
+  transform: translateX(20%);
+}
+.button:disabled:hover svg {
+  transform: none;
+}

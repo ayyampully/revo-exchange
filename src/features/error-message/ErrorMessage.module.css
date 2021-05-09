@@ -1,0 +1,9 @@
+.errorMessageWrapper {
+  padding: 0.2rem 0.4rem;
+  background-color: #ffe9de;
+  color: #f65e23;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}

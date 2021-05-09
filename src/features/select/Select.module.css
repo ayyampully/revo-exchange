@@ -1,0 +1,17 @@
+.select {
+  display: flex;
+  flex-direction: column;
+}
+.value {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.select label {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.icon {
+  width: 28px;
+  height: 28px;
+}

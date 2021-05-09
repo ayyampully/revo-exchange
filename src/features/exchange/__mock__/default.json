@@ -1,0 +1,62 @@
+[
+  {
+    "disclaimer": "Usage subject to terms: https://openexchangerates.org/terms",
+    "license": "https://openexchangerates.org/license",
+    "timestamp": 1620547143,
+    "base": "USD",
+    "rates": {
+      "AED": 3.6732,
+      "CHF": 0.950787,
+      "EUR": 0.822149,
+      "GBP": 0.725589,
+      "INR": 73.496,
+      "JPY": 108.623,
+      "USD": 1
+    }
+  },
+  {
+    "disclaimer": "Usage subject to terms: https://openexchangerates.org/terms",
+    "license": "https://openexchangerates.org/license",
+    "timestamp": 1620306000,
+    "base": "USD",
+    "rates": {
+      "AED": 3.7732,
+      "CHF": 0.930787,
+      "EUR": 0.842149,
+      "GBP": 0.718589,
+      "INR": 73.296,
+      "JPY": 107.981,
+      "USD": 1
+    }
+  },
+  {
+    "disclaimer": "Usage subject to terms: https://openexchangerates.org/terms",
+    "license": "https://openexchangerates.org/license",
+    "timestamp": 1620306000,
+    "base": "USD",
+    "rates": {
+      "AED": 3.7632,
+      "CHF": 0.920787,
+      "EUR": 0.832149,
+      "GBP": 0.705589,
+      "INR": 72.999,
+      "JPY": 109.215,
+      "USD": 1
+    }
+  },
+  {
+    "disclaimer": "Usage subject to terms: https://openexchangerates.org/terms",
+    "license": "https://openexchangerates.org/license",
+    "timestamp": 1620306000,
+    "base": "USD",
+    "rates": {
+      "AED": 3.6832,
+      "CHF": 0.910787,
+      "EUR": 0.823149,
+      "GBP": 0.715889,
+      "INR": 74.002,
+      "JPY": 108.585,
+      "USD": 1
+    }
+  }
+]
