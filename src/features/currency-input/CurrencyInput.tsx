@@ -5,7 +5,7 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { setCurrency } from "../exchange/exchangeSlice";
 import { selectCurrencies } from "../accounts-overview/accountsSlice";
 import styles from "./CurrencyInput.module.css";
-import { Fields } from "../exchange/types";
+import { Fields, Types } from "../exchange/types";
 
 interface CurrencyInputProps {
   fieldType: Fields;
@@ -15,6 +15,7 @@ interface CurrencyInputProps {
   ignoreCurrency?: Array<string>;
   onChange: (value: string) => Promise<void>;
   errorState: boolean;
+  exchangeType: Types;
 }
 function CurrencyInput({
   fieldType,
@@ -24,6 +25,7 @@ function CurrencyInput({
   onChange,
   ignoreCurrency,
   errorState,
+  exchangeType,
 }: CurrencyInputProps) {
   const currencies = useAppSelector(selectCurrencies);
 
@@ -51,6 +53,11 @@ function CurrencyInput({
     setShowModal(false);
   };
 
+  const isDisabled =
+    ((exchangeType === Types.SELL && fieldType === Fields.FROM) ||
+      (exchangeType === Types.BUY && fieldType === Fields.TO)) &&
+    !balance;
+
   return (
     <div className={styles.item}>
       <div className={styles.leftCol}>
@@ -63,8 +70,9 @@ function CurrencyInput({
             type="text"
             placeholder="0"
             aria-label={fieldType}
-            onChange={handleOnChange}
+            onChange={isDisabled ? () => {} : handleOnChange}
             value={value}
+            disabled={isDisabled}
           />
         </div>
         {errorState && (

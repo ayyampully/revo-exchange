@@ -15,26 +15,31 @@ function CurrencyModal({
   onChange,
   onClose,
 }: CurrencyModalProps) {
-  const listItem = Object.entries(currencies)
-    .filter(([key]) => !ignoreCurrency.includes(key))
-    .map(([key, value]) => (
-      <li
-        key={key}
-        onKeyPress={() => {
-          onChange(key);
-        }}
-        data-testid={key}
-        role="button"
-        aria-label={value}
-        tabIndex={1}
-        onClick={() => {
-          onChange(key);
-        }}
-      >
-        <p className={styles.acronym}>{key}</p>
-        <p>{value}</p>
-      </li>
-    ));
+  let filteredList = Object.entries(currencies);
+
+  if (ignoreCurrency.length) {
+    filteredList = filteredList.filter(
+      ([key]) => !ignoreCurrency.includes(key)
+    );
+  }
+  const listItem = filteredList.map(([key, value]) => (
+    <li
+      key={key}
+      onKeyPress={() => {
+        onChange(key);
+      }}
+      data-testid={key}
+      role="button"
+      aria-label={value}
+      tabIndex={1}
+      onClick={() => {
+        onChange(key);
+      }}
+    >
+      <p className={styles.acronym}>{key}</p>
+      <p>{value}</p>
+    </li>
+  ));
   return (
     <div className={styles.modalWrapper}>
       <div className={styles.options}>

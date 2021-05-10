@@ -4,6 +4,8 @@ The app loads with two accounts initially (USD, EUR) both 100 balance. Currently
 
 Using only AED, CHF, EUR, GBP, INR, JPY, USD for simplicity. Because of the API monthly limit, i also added a mock function.
 
+Clicking on logo will take back to home page (accounts overview).
+
 ### Mocks
 
 Mock can be enabled by adding `.env.local` file with `REACT_APP_ENABLE_MOCK=true` or manually change line 7 on `src\features\exchange\exchangeAPI.ts`

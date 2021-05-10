@@ -42,7 +42,8 @@ export const exchangeSlice = createSlice({
           state.toValue = state.fromValue * state.selectedRate;
         } else {
           state.toCurrency = currency;
-          state.selectedRate = state.rate[currency];
+          if (state.fromCurrency === BASE)
+            state.selectedRate = state.rate[currency];
           state.toValue = state.fromValue * state.selectedRate;
         }
       } else {
@@ -51,7 +52,8 @@ export const exchangeSlice = createSlice({
           state.fromValue = state.toValue / state.selectedRate;
         } else {
           state.toCurrency = currency;
-          state.selectedRate = state.rate[currency];
+          if (state.fromCurrency === BASE)
+            state.selectedRate = state.rate[currency];
           state.fromValue = state.toValue / state.selectedRate;
         }
       }
@@ -93,13 +95,8 @@ export const exchangeSlice = createSlice({
           // one new base to 1 USD
           const fromCurrencyToUSDRate = 1 / fromRate;
           const toCurrencyToUSDRate = 1 / toRate;
-          let rate = 0;
-          if (fromCurrencyToUSDRate < 1) {
-            rate = fromCurrencyToUSDRate / toCurrencyToUSDRate;
-          } else {
-            rate = toCurrencyToUSDRate / fromCurrencyToUSDRate;
-          }
-          state.selectedRate = rate;
+
+          state.selectedRate = fromCurrencyToUSDRate / toCurrencyToUSDRate;
         } else {
           state.selectedRate = action.payload[state.toCurrency];
         }

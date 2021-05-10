@@ -82,7 +82,7 @@ function Exchange() {
         }
       } else if (userField === Fields.TO) {
         setFromDisplayValue(formatDisplayValue(fromValue));
-        if (fromValue > from?.balance) {
+        if (!from || fromValue > from?.balance) {
           setFromErrorState(true);
         } else {
           setFromErrorState(false);
@@ -93,7 +93,7 @@ function Exchange() {
       setFromErrorState(false);
       if (userField === Fields.FROM) {
         setToDisplayValue(formatDisplayValue(toValue));
-        if (toValue > to?.balance) {
+        if (!to || toValue > to?.balance) {
           setToErrorState(true);
         } else {
           setToErrorState(false);
@@ -194,6 +194,7 @@ function Exchange() {
           errorState={fromErrorState}
           onChange={handleFromChange}
           ignoreCurrency={ignoreCurrency}
+          exchangeType={exchangeType}
         />
         <div className={styles.switchButtonWrapper}>
           <button
@@ -215,6 +216,7 @@ function Exchange() {
           value={toDisplayValue}
           onChange={handleToChange}
           ignoreCurrency={ignoreCurrency}
+          exchangeType={exchangeType}
         />
       </div>
       <div className={styles.actions}>

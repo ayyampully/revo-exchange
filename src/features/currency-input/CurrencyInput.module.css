@@ -29,6 +29,9 @@ select {
   text-align: right;
   outline: none;
 }
+.rightCol input:disabled {
+  background: none;
+}
 .errorLabel {
   color: red;
   font-size: 0.8rem;
